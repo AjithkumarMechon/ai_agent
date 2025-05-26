@@ -13,15 +13,9 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
-  return (
-    <html lang="en">
-      <body>
-        <main className='flex flex-col justify-center items-center bg-[#192637] min-h-screen' style={{ backgroundSize: '35%', backgroundPosition: 'left 1em bottom -37px', backgroundRepeat: 'no-repeat', height: '100%' }}>
-
-            {children} {'sdsds'}
-        </main>
-      </body>
-    </html>
+  return (<>
+  {children}  
+  </>
   );
 };
 
