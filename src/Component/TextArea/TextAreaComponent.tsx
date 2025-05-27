@@ -1,12 +1,16 @@
 import React, { useRef, useEffect, KeyboardEvent, ChangeEvent } from "react";
 
 interface ChatTextareaProps {
-  onSubmit: (text: string) => void;
+  setInput: (text: string) => void;
   inputValue: string;
   handleSend: () => void;
 }
 
-const ChatTextarea: React.FC<ChatTextareaProps> = ({ onSubmit, inputValue, handleSend }) => {
+const ChatTextarea: React.FC<ChatTextareaProps> = ({
+  setInput,
+  inputValue,
+  handleSend,
+}) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   // Auto-resize the textarea
@@ -23,13 +27,13 @@ const ChatTextarea: React.FC<ChatTextareaProps> = ({ onSubmit, inputValue, handl
       e.preventDefault();
       if (inputValue.trim()) {
         handleSend();
-        onSubmit(""); // clear parent state
+        setInput(""); // clear parent state
       }
     }
   };
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    onSubmit(e.target.value);
+    setInput(e.target.value);
   };
 
   return (

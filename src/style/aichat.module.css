@@ -1,0 +1,47 @@
+.chat_text_field {
+  font-size: 0.1rem;
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  height: calc(92vh - 1rem);
+  padding-bottom: 1rem;
+}
+
+.App_container {
+  display: grid;
+  grid-template-areas: "sidebar navbar navbar" "sidebar main_section main_section" "sidebar main_section main_section";
+  grid-template-columns: 13rem 1fr;
+  grid-template-rows: 3rem auto auto;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  border-right: 1px solid #d6d5d5;
+}
+
+/* Scrollbar thumb (the draggable part) */
+.main_section::-webkit-scrollbar-thumb,.sidebar::-webkit-scrollbar-thumb {
+  background-color: #d6d5d5;
+  border-radius: 1rem;
+}
+.main_section::-webkit-scrollbar-track ,.sidebar::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+.navbar {
+  grid-area: navbar;
+}
+
+.main_section {
+  grid-area: main_section;
+   overflow-y: scroll;
+  scrollbar-width: thin;
+  border-right: 1px solid #d6d5d5;
+  }

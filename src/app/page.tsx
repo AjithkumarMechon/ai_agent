@@ -1,9 +1,23 @@
-import Image from "next/image";
+import React from 'react'
+import SideBar from "@/Component/SideBar/page";
+import Content from "@/Component/Content/page";
+import NavBar from "@/Component/NavBar/page";
+import style from "@/style/aichat.module.css";
 
-export default function Home() {
+function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-     test
+    <div className={style.App_container}>
+      <aside className={style.sidebar}>
+        <SideBar/>
+      </aside>
+      <nav  className={style.navbar}>
+        <NavBar/>
+      </nav>
+      <section  className={style.main_section}>
+        <Content/>
+      </section>
     </div>
-  );
+  )
 }
+
+export default Home
